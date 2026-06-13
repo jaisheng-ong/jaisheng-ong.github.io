@@ -12,7 +12,7 @@
 
 ### Individual Project 1 Overview
 
-Individual Project 1 Folder's URL: [https://github.com/jaisheng-ong/waph-ongjs/tree/main/labs/lab2](https://github.com/jaisheng-ong/waph-ongjs/tree/main/labs/lab2)
+Individual Project 1 Folder's URL: [https://github.com/jaisheng-ong/jaisheng-ong.github.io/tree/main](https://github.com/jaisheng-ong/jaisheng-ong.github.io/tree/main)
 
 Live Site: https://jaisheng-ong.github.io/
 
