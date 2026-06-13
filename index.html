@@ -48,5 +48,22 @@ Non- Technical Requirement File
         </div>
 
     </div>
+    <script>
+    
+    	// other code
+    
+    	// Cookie Code
+    	/*
+    	if first time visit, display message: "Welcome to my homepage!"
+    	if re-vist, display message: "Welcome back! Your last visit was <date/time of last visit>"
+    	*/
+    	if (document.cookie.indexOf("username") < 0) {
+    		alert('no username in cookie, set a new one');
+    		document.cookie = "username= [YOUR username]]";
+    
+    	} else {
+    		alert("my cookie:" + document.cookie);
+    	}
+    </script>
 </body>
 </html>
