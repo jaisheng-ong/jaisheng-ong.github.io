@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>IP1-Ong Jai Sheng</title>
@@ -14,37 +14,38 @@
 
 <div id="menubar">
     <h3>Student: Ong Jai Sheng</h3>
-    <h3>Semester: Summer 2026</h3>
 </div>
 
 <div id="main">
     <p>A simple HTML page</p>
     Using the <a href="https://www.w3schools.com/html" target="_blank">W3Schools Template</a>
+    <p><a href="index.html">&larr; Back to Portfolio</a></p>
 
     <!-- Web Application Programming and Hacking Course Information -->
      <h2>WAPH - Web Application Programming and Hacking Course</h2>
-     <p> <!-- description--> </p>
-
+     <p>In this course, I study basic web application development with front-end (HTML5, JavaScript, CSS) and back-end (PHP/MySQL). I explore web application vulnerabilities and attacks through hands-on exercises on the range, and apply secure programming principles and practices to prevent them.</p>
+    
+     <p>So far, we have covered various Labs, Hands-on Exercises and Hackathons in this course shown below:</p>
       <h2>Labs Overview</h2>
 
-      <h3>Lab 0</h3>
-      <p> <!-- description--> </p>
+      <h3>Lab 0: Development Environment Setup</h3>
+      <p>In this lab, I set up an Ubuntu Virtual Machine, installed the required software, and tested the Apache Web Server. I then initialized a Git repository, completed version control exercises, and generated SSH keys to establish a secure connection between my virtual machine and GitHub — getting comfortable with the full Git workflow in the process.</p>
 
-      <h3>Lab 1</h3>
-      <p> <!-- description--> </p>
+      <h3>Lab 1: Front-end Web Development</h3>
+      <p>In this lab, I explored the full request-response cycle between browser and server. I traced how an HTTP Request travels from the client to the Apache Web Server, gets processed by the CGI/PHP engine which generates a response, and is then packaged into an HTTP Response packet and sent back — where the browser finally renders it into a displayable webpage. I also used Wireshark to capture and visualize packets traveling between the client and server in real time.</p>
 
-      <h3>Lab 2</h3>
-      <p> <!-- description--> </p>
+      <h3>Lab 2: Front-end Web Programming</h3>
+      <p>In this lab, I built the overall structure of an HTML page and embedded local JavaScript to handle basic features on the client side without relying on the server for everything. I then used Ajax to send data to a web server endpoint (echo.php) and update the page dynamically without reloading. I simplified those Ajax calls using jQuery, and finally extended the page to communicate with external servers — fetching data from the Joke API and Agify API using the <code>fetch()</code> API.</p>
 
       <h2>Hackathons Overview</h2>
 
-      <h3>Hackathon 1</h3>
-      <p> <!-- description--> </p>
+      <h3>Hackathon 1: XSS Attack &amp; Defense</h3>
+      <p>The key lesson I took from this hackathon is that I can't defend something I don't know how to break. It had two tasks. In Task 1, I acted as a hacker — attempting to inject malicious scripts across increasingly hardened levels where the server applied word filters blocking the &lt;script&gt; tag. This pushed me to constantly think like an attacker and find creative ways around each filter. In Task 2, I switched roles and acted as the defender. I learned how output encoding using <code>htmlentities()</code> and <code>htmlspecialchars()</code> neutralizes all HTML entities automatically — eliminating the need to manually hunt for every possible bad input. This taught me how to reason about security guarantees: not just whether something works, but whether it holds no matter what a user throws at it.</p>
 
       <h2>Projects Overview</h2>
 
-      <h3>Individual Project</h3>
-      <p> <!-- description--> </p>
+      <h3>Individual Project 1: Personal Portfolio</h3>
+      <p>This project is the portfolio you were viewing. I designed and deployed a personal portfolio website on GitHub Pages as a public repository, showcasing my background, experience, skills, and projects to potential employers. Beyond a resume, the portfolio integrates features covered throughout the course — including front-end development with HTML, CSS, and JavaScript, client-side interactivity, and API integration from the labs and hackathons.</p>
 </div>
 
 </body>
