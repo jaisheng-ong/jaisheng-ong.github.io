@@ -22,3 +22,5 @@ Live Site: https://jaisheng-ong.github.io/
 ### Non-Technical Requirements
 
 ### Technical Requirements
+
+#### Basic JavaScript code
