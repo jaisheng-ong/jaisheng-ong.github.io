@@ -1,6 +1,3 @@
-<!--
-Non- Technical Requirement File
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +7,386 @@ Non- Technical Requirement File
     <meta name="author" content>
     <title>WAPH - Ong Jai Sheng</title>
 
-    
+    <style>
+        :root {
+        --accent-color: #4fc385;
+        --section-alt-bg: #f0f4f8;
+        --text-color: #2c2c2c;
+        --card-bg: #ffffff;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .side-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: #f5f5f5;
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 1rem;
+        }
+
+        .sidebar-name {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .sidebar-lst {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-lst li {
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-lst a {
+            display: block;
+            color: #2c2c2c;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-lst a:hover {
+            background-color: #40de8a;
+            color: white;
+        }
+
+        .main-content {
+            margin-left: 260px;
+            flex: 1;
+            padding: 2rem;
+            background-color: #ffffff;
+        }
+
+        section {
+            padding: 2rem 0;
+        }
+
+        /* Centering h2 rule for section header */
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto;
+        }
+
+        
+        /* Work Experience Section */
+        .experience-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .experience-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .experience-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .experience-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .experience-header-text {
+            flex: 1;
+        }
+        
+        .experience-header h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-color);
+            font-size: 1.5rem;
+        }
+        
+        .experience-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+        
+        .experience-content ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .experience-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        /* Currently Snapshot */
+        .currently-list {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .currently-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background-color: var(--section-alt-bg);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .currently-label {
+            font-weight: 700;
+            color: var(--accent-color);
+            min-width: 110px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding-top: 0.1rem;
+        }
+
+        .currently-text {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Education Section */
+        .education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.25rem 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px var(--shadow-color);
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            color: var(--accent-color);
+        }
+
+        .edu-dates, .edu-gpa {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .project-description {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-tech-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tech-icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .project-tech-icon {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
+
+        .tech-tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            text-align: center;
+            border-radius: 4px;
+            padding: 5px 8px;
+            margin-bottom: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1;
+            border: 1px solid var(--accent-color);
+        }
+
+        .tech-icon-wrapper:hover .tech-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        /* Contact Section */
+        .contact-bar {
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .contact-segment {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            color: white;
+            text-align: center;
+        }
+
+        .email-segment { background-color: #2c2c2c; }
+        .location-segment { background-color: #4a7c9b; }
+        .phone-segment { background-color: #2c2c2c; }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-text {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1.5px solid var(--accent-color);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +395,7 @@ Non- Technical Requirement File
 
         <!-- SideBar Layout-->
         <div class="sidebar">
-            <img src="assets/jai_headshot.png" alt="Profile Picture" class="sidebar-profile-img">
+            <img src="assets/JaiSheng-Photo.jpg" alt="Profile Picture" class="sidebar-profile-img">
             <div class="sidebar-name">Ong Jai Sheng</div>
 
             <ul class="sidebar-lst">
@@ -35,35 +411,344 @@ Non- Technical Requirement File
         </div>
 
         <div class="main-content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p style="text-align: center;">Hey! I'm a Computer Science student at the University of Cincinnati, originally from Malaysia. I'm drawn to problems where software and data can make a real difference — from ML research to full-stack systems.</p>
+                <p style="text-align: center;">Outside of technical work, I find creative inspiration in manga and animation — it's what first sparked my curiosity about interactive and immersive digital worlds, even if that's still more of a personal interest than a professional one.</p>
+                <div class="currently-list">
+                    <div class="currently-item">
+                        <span class="currently-label">Studying</span>
+                        <span class="currently-text">Database Design &amp; Development, Web Application Programming &amp; Security, and Software Engineering — covering the full cycle from data modeling to cloud deployment.</span>
+                    </div>
+                    <div class="currently-item">
+                        <span class="currently-label">Learning</span>
+                        <span class="currently-text">SQL, PHP, Node.js, MongoDB, Socket.io, Azure App Services, CI/CD with GitHub Actions, and secure full-stack development practices.</span>
+                    </div>
+                    <div class="currently-item">
+                        <span class="currently-label">Interested in</span>
+                        <span class="currently-text">Game development, virtual reality, and applying machine learning to interactive and immersive applications.</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Work Experience Section -->
+            <section id="experience" style="background-color: var(--section-alt-bg);">
+                <div class="container">
+                    <h2>Work Experiences</h2>
+                    <div class="experience-container">
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <img src="assets/mcut-logo.jpg" alt="Ming Chi University of Technology" class="experience-logo">
+                                <div class="experience-header-text">
+                                    <h3>Machine Learning Research Intern</h3>
+                                    <div class="experience-meta">
+                                        <span class="company">Ming Chi University of Technology, Taiwan</span>
+                                        <span class="date">Jan 2026 - May 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <ul>
+                                    <li><strong>Architected an end-to-end machine learning pipeline</strong> in Python (PyCaret, Keras) to predict highly volatile industrial wastewater metrics.</li>
+                                    <li><strong>Engineered advanced time-series features</strong> by implementing a <strong>2D-state Kalman filter</strong> and <strong>ARIMA</strong> one-step-ahead forecasting, effectively de-noising sensor volatility and completely eliminating temporal data leakage.</li>
+                                    <li><strong>Conducted Bayesian hyperparameter optimization</strong> via <strong>Optuna</strong> to tune a <strong>deep learning LSTM architecture</strong>, actively comparing sequence-learning capacity against traditional tree-based models.</li>
+                                    <li><strong>Optimized for production viability</strong>, demonstrating that human-guided mathematical forecasting paired with Extra Trees was 3x more computationally efficient and more stochastically stable than deep learning alternatives for small-scale edge deployment.</li>
+                                    <li><strong>Wrote an IEEE-formatted scientific paper</strong> detailing the ablation study, feature engineering progression, and computational cost analysis.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <img src="assets/aubot-logo.jpg" alt="Aubot" class="experience-logo">
+                                <div class="experience-header-text">
+                                    <h3>Software Engineer Intern</h3>
+                                    <div class="experience-meta">
+                                        <span class="company">Aubot, Remote</span>
+                                        <span class="date">May 2025 – Aug 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <ul>
+                                    <li><strong>Improved lesson publishing speed by 30%</strong> by reviewing and correcting <strong>120+ grammar, clarity, and technical errors</strong> across <strong>10+ advanced Python documents</strong> prior to release.</li>
+                                    <li><strong>Enhanced lesson maintainability and student learning outcomes</strong> by leveraging <strong>Git-based collaboration</strong>, contributing fixes, and writing <strong>automated test scripts</strong> that flagged incorrect solution methods.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <div class="experience-header-text">
+                                    <h3>Customer Service / Waiting Staff</h3>
+                                    <div class="experience-meta">
+                                        <span class="company">Sushi Tei, Kuala Lumpur, Malaysia</span>
+                                        <span class="date">December 2020 - May 2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <ul>
+                                    <li>Provided customer service in a Japanese restaurant to meet customer needs</li>
+                                    <li>Processed orders and ensured timely delivery of sushi and other dishes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <h3>University of Cincinnati</h3>
+                        <p class="edu-degree">Bachelor of Science in Computer Science</p>
+                        <p class="edu-dates">Aug 2024 – Expected May 2028</p>
+                        <p class="edu-gpa">GPA: 3.4 | Dean's List</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3>Cincinnati State Technical and Community College</h3>
+                        <p class="edu-degree">Associate of Applied Science in Software Engineering Technology</p>
+                        <p class="edu-dates">Aug 2022 – May 2024</p>
+                        <p class="edu-gpa">GPA: 4.0 | Graduated with Honors</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" style="background-color: var(--section-alt-bg);">
+                <h2>Skills</h2>
+                <div class="skills-section">
+
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">Visual Basic</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">Assembly</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Azure</span>
+                            <span class="skill-tag">Linux (Ubuntu)</span>
+                            <span class="skill-tag">LaTeX</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks &amp; Libraries</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Socket.io</span>
+                            <span class="skill-tag">PyCaret</span>
+                            <span class="skill-tag">Optuna</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Professional Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile Methodologies</span>
+                            <span class="skill-tag">Scrum</span>
+                            <span class="skill-tag">Data Analysis (SQL, Python, Excel)</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">English</span>
+                            <span class="skill-tag">Mandarin Chinese</span>
+                            <span class="skill-tag">Bahasa Melayu</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- Projects Section -->
+            <section id="projects">
+                <div class="container">
+                    <h2>My Projects</h2>
+                    <div class="projects-container">
+                        <div class="project-card">
+                            <div class="project-info">
+                                <h3 class="project-title">WasteWater-COD-Forecast</h3>
+                                <p class="project-description">• Preprocessed a small-scale industrial sensor dataset from MCUT's wastewater facility by studying plant process context, mapping raw feature semantics to physical treatment stages, and resolving missing values.</p>
+                                <p class="project-description">• Applied VIF-based feature selection to remove multicollinear predictors; found residual features had weak COD signal, motivating time-series feature engineering via <strong>Kalman filtering</strong> and <strong>ARIMA</strong> forecasting to surface temporal patterns.</p>
+                                <p class="project-description">• Trained <strong>Extra Tree</strong> regressor on the engineered features and analyzed importance scores to interpret which derived signals most strongly drove AT_COD predictions.</p>
+                                <p class="project-description">• Implemented <strong>LSTM</strong> as a sequence-learning baseline; attributed its underperformance to insufficient training samples for deep learning, empirically validating Extra Trees as the appropriate model for small-scale edge deployment.</p>
+                                <p><strong>January 2026 – May 2026</strong></p>
+                                <div class="project-tech-icons">
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+                                        <span class="tech-tooltip">Python</span>
+                                    </div>
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="assets/pycaret-logo.png" alt="PyCaret">
+                                        <span class="tech-tooltip">PyCaret</span>
+                                    </div>
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="assets/optuna-logo.png" alt="Optuna">
+                                        <span class="tech-tooltip">Optuna</span>
+                                    </div>
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original.svg" alt="Jupyter">
+                                        <span class="tech-tooltip">Jupyter</span>
+                                    </div>
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg" alt="LaTeX">
+                                        <span class="tech-tooltip">LaTeX</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-info">
+                                <h3 class="project-title">Sleep-Sack Duo</h3>
+                                <p class="project-description">• Led a team of 4 in prototyping to address homelessness, focusing on reducing infant mortality among homeless families in San Jose.</p>
+                                <p class="project-description">• Engineered an insulated jacket with a sleeping bag extension and baby holder, meeting warmth retention (10°F), water resistance (5 minutes), and durability (10 pounds capacity) requirements.</p>
+                                <p><strong>August 2024 – December 2024</strong></p>
+                                <div class="project-tech-icons">
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/2721/2721264.png" alt="Engineering">
+                                        <span class="tech-tooltip">Engineering</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-info">
+                                <h3 class="project-title">Ski and Snowboard Rental System</h3>
+                                <p class="project-description">• Developed a Ski and Snowboard Rental System using <strong>Python</strong> and <strong>Object-Oriented Programming</strong>.</p>
+                                <p class="project-description">• Implemented features for customers to view available equipment, rent skis and snowboards on an hourly, daily, or weekly basis, and apply discounts for family rentals and coupon codes.</p>
+                                <p><strong>May 2023 – August 2023</strong></p>
+                                <div class="project-tech-icons">
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+                                        <span class="tech-tooltip">Python</span>
+                                    </div>
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="assets/oop-logo.png" alt="OOP">
+                                        <span class="tech-tooltip">OOP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-info">
+                                <h3 class="project-title">Employee Discount Calculation System</h3>
+                                <p class="project-description">• Utilized <strong>Python</strong> program to calculate employee discount based on years of service, employee status and annual discount limits.</p>
+                                <p class="project-description">• Designed application to handle multiple employees in a single session, display individual and summary reports.</p>
+                                <p><strong>Jan 2023 - May 2023</strong></p>
+                                <div class="project-tech-icons">
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+                                        <span class="tech-tooltip">Python</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-info">
+                                <h3 class="project-title">Passenger and Employee Management System</h3>
+                                <p class="project-description">• Developed a comprehensive login system using <strong>Visual Basic</strong> and <strong>SQL</strong> for both passengers and employees.</p>
+                                <p class="project-description">• Implemented secure login functionality with validation for Passenger and Employee roles.</p>
+                                <p><strong>August 2022 - Dec 2022</strong></p>
+                                <div class="project-tech-icons">
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="assets/vb-logo.png" alt="Visual Basic">
+                                        <span class="tech-tooltip">Visual Basic</span>
+                                    </div>
+                                    <div class="tech-icon-wrapper">
+                                        <img class="project-tech-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
+                                        <span class="tech-tooltip">MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certification">
+                <h2>Certifications</h2>
+                <div class="education-list">
+
+                    <div class="education-item">
+                        <h3>Foundations of Machine Learning</h3>
+                        <p class="edu-degree">Fractal Analytics · Coursera</p>
+                        <p class="edu-dates">Issued: February 24, 2026</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Python for Data Science, AI &amp; Development</h3>
+                        <p class="edu-degree">IBM · Coursera</p>
+                        <p class="edu-dates">Issued: January 13, 2026</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Google Prompting Essentials V1</h3>
+                        <p class="edu-degree">Google · Coursera</p>
+                        <p class="edu-dates">Issued: May 06, 2025</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>EF SET English Certificate 66/100 (C1 Advanced)</h3>
+                        <p class="edu-degree">EF SET</p>
+                        <p class="edu-dates">Issued: October 05, 2025</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="container">
+                    <h2>Contact Me</h2>
+                    <div class="contact-bar">
+                        <div class="contact-segment email-segment">
+                            <div class="contact-icon">✉</div>
+                            <div class="contact-text">ongjs@mail.uc.edu</div>
+                        </div>
+                        <div class="contact-segment location-segment">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">Cincinnati, OH</div>
+                        </div>
+                        <div class="contact-segment phone-segment">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">(513)-918-9488</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Fun Features Section -->
             <section id="fun-features">
                 <h2>Fun Features</h2>
                 <div class="information-section">
                     <h4>Link to Web Application Programming &amp; Hacking Course</h4>
-                    <a href="https://github.com/jaisheng-ong/jaisheng-ong.github.io/waph.html" target="_blank">Click Here to Access Course Information</a>
+                    <a href="waph.html" target="_blank">Click Here to Access Course Information</a>
                 </div>
             </section>
 
         </div>
 
     </div>
-    <script>
-    
-    	// other code
-    
-    	// Cookie Code
-    	/*
-    	if first time visit, display message: "Welcome to my homepage!"
-    	if re-vist, display message: "Welcome back! Your last visit was <date/time of last visit>"
-    	*/
-    	if (document.cookie.indexOf("username") < 0) {
-    		alert('no username in cookie, set a new one');
-    		document.cookie = "username= [YOUR username]]";
-    
-    	} else {
-    		alert("my cookie:" + document.cookie);
-    	}
-    </script>
 </body>
 </html>
