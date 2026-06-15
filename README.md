@@ -20,7 +20,7 @@ Original (Reference) Portfolio: [https://jaisheng-ong.github.io/jaisheng-ong-por
 
 ### General Requirements
 
-Since I already had a portfolio a while ago, so I used it as stepping stone to start off for this project., I created an /assets folder to hold my images and 2 html file; index.html for main portfolio and waph.html for introducing course. I included the required name, headshot, contact info, education, experience and skills sections. On top of that I add a clickable link to bring guest(s) to the HTML page that introduce WAPH course.
+Since I already had a portfolio a while ago, so I imported it and used it as stepping stone to start off for this project., I created an /assets folder to hold my images and 2 html file; index.html for main portfolio and waph.html for introducing course. I included the required name, headshot, contact info, education, experience and skills sections. On top of that I add a clickable link to bring guest(s) to the HTML page that introduce WAPH course.
 
 ### Non-Technical Requirements
 
