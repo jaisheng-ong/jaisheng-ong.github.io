@@ -14,9 +14,7 @@
 
 Individual Project 1 Folder's URL: [https://github.com/jaisheng-ong/jaisheng-ong.github.io/tree/main](https://github.com/jaisheng-ong/jaisheng-ong.github.io/tree/main)
 
-Live Site: https://jaisheng-ong.github.io/
-
-Original (Reference) Portfolio: [https://jaisheng-ong.github.io/jaisheng-ong-portfolio/](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/)
+Live Site Portfolio: https://jaisheng-ong.github.io/
 
 ### General Requirements
 
@@ -35,3 +33,7 @@ For this requirements, I included show/hide email feature (Under 'Contact' secti
 I included cookies for first timer and returning visitor(s), where I code a function call 'getCookie' which takes in cookies and return user previous Visit cookie's date. Another function 'checkVisit', esentially checks if the visitor(s) has the required cookie, if not alert with first timer message and set a cookie call 'lastVisit' that expires in 67 days starting the current date the cookie is assigned. If the visitor(s) is a returning visitor(s), then alert a returning message with its last visit date which we got from 'getCookie' function.
 
 For the "one more functionality", I added the timeline feature that shows my journey so far in between in between 'Projects' section and 'Certifications' section. This feature is first implented in my original portfolio, I move it to this assignment thinking it would be cool. 
+
+
+### Reference
+Original (Reference) Portfolio: [https://jaisheng-ong.github.io/jaisheng-ong-portfolio/](https://jaisheng-ong.github.io/jaisheng-ong-portfolio/)
